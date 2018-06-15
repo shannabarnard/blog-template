@@ -1,44 +1,71 @@
 <!DOCTYPE html>
-<head>
-  {% include head.html %}
+<html>
 
-  <!-- This adds page specific content to the head of that page. -->
-  {{page.head_html}}
+  <head>
+    <!-- This is the head of your html, add content here just like you would normally add it to the head. -->
 
-</head>
+    <!-- Meta Data -->
+    <meta charset="utf-8">
 
-<body>
+        <!-- Meta data for SEO purposes. -->
+        <title> {{page.title}} </title>
+        <meta name="description" content="{{page.meta-description}}">
+        <meta name="keywords" content="{{page.meta-keywords}}">
 
-<div class="pure-container" data-effect="pure-effect-slide">
+        <!-- meta data to tell the browser that your devide is responsive -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="index, follow">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
-  <!-- this is the icon and controls for the hamburger menu -->
-  <input type="checkbox" id="pure-toggle-right" class="pure-toggle" data-toggle="right">
-  <label class="pure-toggle-label mob-show" for="pure-toggle-right" data-toggle-label="right">
-    <span class="pure-toggle-icon"></span>
-  </label>
+        <!--  Social media sharing META Tags -->
+        <meta property="og:title" content="{{page.title}}">
+        <meta property="og:description" content="{{page.meta-description}}">
+        <meta property="og:image" content="{{page.featured-image_path}}">
+        <meta property="og:url" content="{{page.url}}">
+        <meta name="twitter:card" content="{{page.meta-description}}">
+        <meta name="og:site_name" content="<!-- ADD SITE NAME HERE -->">
 
-  <!-- This contains the hamburger menu when it's popped out-->
-  <div class="pure-drawer" data-position="right">
+    <!-- end of meta tags -->
 
-    {% include hamburger-nav.html %}
+    <!-- Links to CSS Stylesheets  -->
 
-  </div>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,700" rel="stylesheet">
 
-  <div class="pure-pusher-container">
-      <div class="pure-pusher"> <!-- this contains all of the body of the site -->
+        <!-- Font Awesome for Icons -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-        {% include site-header.html %}
+        <!-- Gridlex for a simple flexbox grid -->
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gridlex/2.2.4/gridlex.min.css"> -->
+        <link rel="stylesheet" href="/styles/gridlex.min.css">
+        <!-- visit http://realfavicongenerator.net to generate favicons for your site and then place them in the /images/favicons folder -->
 
-        {{content}}
 
-        {% include site-footer.html %}
+        <!-- CUSTOM STYLESHEETS - This should always be the last stylesheet in your head -->
+        <link rel="stylesheet" href="/styles/main.css">
+        <link rel="stylesheet" href="/styles/specific.css">
 
-      </div> <!-- end pure-pusher -->
-  </div> <!-- end pure pusher container -->
+    <!-- end stylesheets -->
 
-  <!-- this is the overlay when you are viewing the mobile nav -->
-  <label class="pure-overlay" for="pure-toggle-right" data-overlay="right"></label>
-</div> <!-- end of page, nothing except body scipts should be below this -->
+    <!-- Google Analytics -->
+        <!-- paste your google analytics code here -->
+    <!-- end google analytics -->
 
-{% include body-scripts.html %}
-</body>
+    <!-- This adds page specific content to the head of that page. -->
+    {{page.head_html}}
+
+  </head>
+
+  <body>
+    {% include site-header.html %}
+
+    {{content}}
+
+    {% include site-footer.html %}
+
+    <!-- Third party scripts will placed below this line -->
+
+  </body>
+</html>
