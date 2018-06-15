@@ -92,19 +92,17 @@ blockquote {
 /* Padding & Margin */
 
 header, footer  { padding: 2vh 5%; }
-
 section         { padding: 10vh 5%; }
 
 .col,
 [class*=col-]   { padding: 2%; }
 
-
 /* Other universal styles */
-
 .featured{
   background-color: #1abc9c; /* featured color */
   color: white;
 }
+
 .fa.featured {
   color: #1abc9c; /* featured color */
   background: none;
@@ -187,8 +185,6 @@ footer nav .fa,
 .button a {
   color: white;
   text-decoration: none;
-  border-radius: 5px;
-  padding: 0.5rem 3rem;
 }
 
 .button-inverted {
@@ -198,7 +194,8 @@ footer nav .fa,
 
 .button:hover,
 .button-inverted:hover {
-  font-weight: semi-bold;
+  background-color: #29aa8e;
+  cursor: pointer;
 }
 
 .previous,
