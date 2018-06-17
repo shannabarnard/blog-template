@@ -1,0 +1,13 @@
+/* Styling for SEARCH RESULTS PAGE */
+
+#search-results li {
+  list-style: none;
+}
+
+@media (min-width: 48em) {
+  #search-results li {
+    width: 33.33%;
+    padding: .5rem;
+    display: inline-block;
+  }
+}

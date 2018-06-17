@@ -16,6 +16,7 @@
         {% for post in site.posts %}
           "{{ post.url | slugify }}": {
             "title": "{{ post.title | xml_escape }}",
+            "image_path": "{{ post.image_path | xml_escape }}",
             "author": "{{ post.author | xml_escape }}",
             "category": "{{ post.category | xml_escape }}",
             "content": {{ post.content | strip_html | strip_newlines | jsonify }},
